@@ -37,7 +37,7 @@ class API():
             raise NotImplementedError(response)
 
 
-def get_access_token(app_id, *rights):
+def get_access_token(app_id, rights=()):
     url = 'https://oauth.vk.com/authorize?client_id={0}&'\
             'scope={1}&'\
             'redirect_uri=http://oauth.vk.com/blank.html&'\
