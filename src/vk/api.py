@@ -37,10 +37,10 @@ class API():
             raise NotImplementedError(response)
 
 
-def get_access_token(*rights):
-    url = 'https://oauth.vk.com/authorize?client_id=3463254&'\
-            'scope={0}&'\
+def get_access_token(app_id, *rights):
+    url = 'https://oauth.vk.com/authorize?client_id={0}&'\
+            'scope={1}&'\
             'redirect_uri=http://oauth.vk.com/blank.html&'\
             'display=touch&'\
-            'response_type=token'.format(','.join(rights))
+            'response_type=token'.format(app_id, ','.join(rights))
     webbrowser.open_new_tab(url)
